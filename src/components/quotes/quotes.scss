@@ -1,0 +1,29 @@
+.quotes-container {
+  width: 644px;
+  background: white;
+  padding: 20px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  img {
+    margin-bottom: 20px;
+  }
+
+  .quotes {
+    .author-quotes {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      padding: 15px;
+      width: 644px;
+      margin-bottom: 20px;
+
+      span {
+        text-align: right;
+        font-weight: 700;
+        display: block;
+      }
+    }
+  }
+}

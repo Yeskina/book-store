@@ -1,0 +1,81 @@
+@mixin flex {
+  display: flex;
+}
+
+.cart-container {
+  @include flex;
+  margin-left: 50px;
+  height: 540px;
+  margin-top: 55px;
+  width: 230px;
+  height: 530px;
+  border: 3px solid gray;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+
+  .price {
+    @include flex;
+    align-items: flex-end;
+    margin-top: 10px;
+  }
+
+  .value {
+    font-size: 30px;
+    color: red;
+    margin-left: 20px;
+  }
+
+  .in-stock {
+    color: green;
+    font-size: 20px;
+    margin: 10px;
+  }
+
+  .truck {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 10px;
+  }
+  .cart-icons {
+    margin-right: 5px;
+  }
+
+  .buttons-container {
+    @include flex;
+    flex-direction: column;
+    margin-top: 20px;
+  
+    .cart {
+      height: 50px;
+      width: 200px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      background: #eac553c2;
+      border: 1px solid #e2b321e0;
+
+      .image-cart {
+        width: 32px;
+        height: 32px;
+        margin-right: 5px;
+      }
+    }
+    .buy {
+      height: 50px;
+      margin-top: 8px;
+      width: 200px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      background: #eac553c2;
+      border: 1px solid #e2b321e0;
+
+      .image-buy {
+        width: 32px;
+        height: 32px;
+        margin-right: 5px;
+      }
+    }
+  }
+}

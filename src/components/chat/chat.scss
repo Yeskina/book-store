@@ -1,0 +1,29 @@
+.chat {
+  border-radius: 35px;
+  height: 40px;
+  width: 100px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 350px;
+  position: absolute;
+  right: 20px;
+  bottom: -860px;
+  border: 2px solid #827979;
+  padding: 15px;
+  background-color: #dad7d7;
+
+  h2 {
+    margin: 10px;
+  }
+
+  textarea {
+    height: 90px;
+  }
+  input {
+    height: 30px;
+  }
+}

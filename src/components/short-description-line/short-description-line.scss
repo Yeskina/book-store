@@ -1,0 +1,26 @@
+
+@mixin flex {
+  display: flex;
+}
+
+.short-description-line {
+  width: 700px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+
+  .line {
+    @include flex;
+    justify-content: space-between;
+    .text {
+      @include flex;
+      align-items: center;
+
+      flex-direction: column;
+    }
+    .icon {
+      width: 25px;
+      height: 25px;
+      padding: 10px;
+    }
+  }
+}
