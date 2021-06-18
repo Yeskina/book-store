@@ -8,7 +8,7 @@ import BookDetails from '../book-details/book-details'
 
 import './all-books.scss'
 
-const EighthBook = () => {
+const EighthBook = ({ AddBookInCart }) => {
   const bookDescription = () => {
     return (
       <div>
@@ -66,7 +66,7 @@ const EighthBook = () => {
             authorLink={'https://en.wikipedia.org/wiki/Pekka_H%C3%A4m%C3%A4l%C3%A4inen_(historian)'}
           />
         </div>
-        <CartContainer price="$17,63" />
+        <CartContainer price="$17,63" bookId={8} AddBookInCart={AddBookInCart} />
       </div>
       <DescriptionLine
         age="16+"

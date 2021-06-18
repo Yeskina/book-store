@@ -7,7 +7,7 @@ import BookDetails from '../book-details/book-details'
 
 import './all-books.scss'
 
-const ThirteenthBook = () => {
+const ThirteenthBook = ({AddBookInCart}) => {
   const bookDescription = () => {
     return (
       <div>
@@ -66,13 +66,13 @@ const ThirteenthBook = () => {
           <div className="book-container">
             <img src={book1} alt="games-book"></img>
             <BookDescription
-              bookName="Games (The Ultimate RPG Guide Series)"
+              bookName="Year of the Monkey"
               author="Patti Smith"
               bookDescription={bookDescription()}
               authorLink={'https://en.wikipedia.org/wiki/Patti_Smith'}
             />
           </div>
-          <CartContainer price="$4,99" />
+          <CartContainer price="$4,99" bookId={13} AddBookInCart={AddBookInCart} />
         </div>
         <DescriptionLine
           age="14+"

@@ -56,7 +56,7 @@ const ThirdBook = ({ AddBookInCart }) => {
               authorLink={'https://en.wikipedia.org/wiki/Matthew_McConaughey'}
             />
           </div>
-          <CartContainer price="$14,99" books={product} AddBookInCart={AddBookInCart} />
+          <CartContainer price="$14,99" bookId={3} AddBookInCart={AddBookInCart} />
         </div>
         <DescriptionLine
           age="16+"

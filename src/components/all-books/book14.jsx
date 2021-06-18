@@ -7,7 +7,7 @@ import BookDetails from '../book-details/book-details'
 
 import './all-books.scss'
 
-const FourteenthBook = () => {
+const FourteenthBook = ({ AddBookInCart}) => {
   const bookDescription = () => {
     return (
       <div>
@@ -74,7 +74,7 @@ const FourteenthBook = () => {
               authorLink={'https://en.wikipedia.org/wiki/Terry_Tempest_Williams'}
             />
           </div>
-          <CartContainer price="$15,99" />
+          <CartContainer price="$15,99" bookId={14} AddBookInCart={AddBookInCart} />
         </div>
         <DescriptionLine
           age="18+"

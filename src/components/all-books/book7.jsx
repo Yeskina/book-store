@@ -8,7 +8,7 @@ import BookDetails from '../book-details/book-details'
 
 import './all-books.scss'
 
-const SeventhBook = () => {
+const SeventhBook = ({ AddBookInCart }) => {
   const bookDescription = () => {
     return (
       <div>
@@ -58,7 +58,7 @@ const SeventhBook = () => {
             authorLink={'https://en.wikipedia.org/wiki/Claire_Saffitz'}
           />
         </div>
-        <CartContainer price="$30,81" />
+        <CartContainer price="$30,81" bookId={7} AddBookInCart={AddBookInCart} />
       </div>
       <DescriptionLine
         age="12+"

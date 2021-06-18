@@ -7,7 +7,7 @@ import BookDetails from '../book-details/book-details'
 
 import './all-books.scss'
 
-const TwelfthBook = () => {
+const TwelfthBook = ( { AddBookInCart}) => {
   const bookDescription = () => {
     return (
       <div>
@@ -59,7 +59,7 @@ const TwelfthBook = () => {
               authorLink={'https://www.simonandschuster.com/authors/James-D-Amato/144640563'}
             />
           </div>
-          <CartContainer price="$14,99" />
+          <CartContainer price="$14,99" bookId={12} AddBookInCart={AddBookInCart} />
         </div>
         <DescriptionLine
           age="12+"

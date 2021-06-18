@@ -6,9 +6,7 @@ import buy from '../icons/play-button.png'
 import icon5 from '../icons/truck.png'
 import icon6 from '../icons/credit-card.png'
 
-const CartContainer = ({ price, books, AddBookInCart }) => {
-  const booksId = books.map((el) => el.id === 1)
-  console.warn(booksId)
+const CartContainer = ({ price, bookId, AddBookInCart }) => {
   return (
     <div className="cart-container">
       <div className="price">
@@ -33,7 +31,7 @@ const CartContainer = ({ price, books, AddBookInCart }) => {
         <li>Apple Pay</li>
       </ul>
       <div className="buttons-container">
-        <button onClick={() => AddBookInCart(booksId)} className="cart">
+        <button onClick={() => AddBookInCart(bookId)} className="cart">
           <img className="image-cart" src={cart} alt="cart"></img> Add to Cart
         </button>
 

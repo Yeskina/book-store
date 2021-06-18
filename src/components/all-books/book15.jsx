@@ -7,7 +7,7 @@ import BookDetails from '../book-details/book-details'
 
 import './all-books.scss'
 
-const FifteenthBook = () => {
+const FifteenthBook = ({ AddBookInCart }) => {
   const bookDescription = () => {
     return (
       <div>
@@ -60,7 +60,7 @@ const FifteenthBook = () => {
           <div className="book-container">
             <img src={book1} alt="star-wars-origami-book"></img>
             <BookDescription
-              bookName="Star Wars Origami 2: 34 More Projects from a Galaxy Far, Far Away. . . . "
+              bookName="Star Wars Origami 2: 34 More Projects from a Galaxy Far, Far Away...."
               author="Chris Alexander"
               bookDescription={bookDescription()}
               authorLink={
@@ -68,7 +68,7 @@ const FifteenthBook = () => {
               }
             />
           </div>
-          <CartContainer price="$14,99" />
+          <CartContainer price="$14,99" bookId={15} AddBookInCart={AddBookInCart} />
         </div>
         <DescriptionLine
           age="8 years and up"

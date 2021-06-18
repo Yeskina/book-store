@@ -59,7 +59,7 @@ const SecondBook = ({ AddBookInCart }) => {
               authorLink={'https://en.wikipedia.org/wiki/Karen_Russell'}
             />
           </div>
-          <CartContainer price="$11,99" books={product} AddBookInCart={AddBookInCart} />
+          <CartContainer price="$11,99" bookId={2} AddBookInCart={AddBookInCart} />
         </div>
         <DescriptionLine
           age="18+"

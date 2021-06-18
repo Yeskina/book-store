@@ -8,7 +8,7 @@ import BookDetails from '../book-details/book-details'
 
 import './all-books.scss'
 
-const FirstBook = ({ AddBookInCart, product }) => {
+const FirstBook = ({ AddBookInCart }) => {
   
   const bookDescription = () => {
     return (
@@ -59,7 +59,6 @@ const FirstBook = ({ AddBookInCart, product }) => {
       </div>
     )
   }
-  console.warn(AddBookInCart)
   return (
     <div className="main-container">
       <div className="container">
@@ -72,7 +71,7 @@ const FirstBook = ({ AddBookInCart, product }) => {
             authorLink={"https://en.wikipedia.org/wiki/Lev_Grossman"}
           />
         </div>
-        <CartContainer price="$18" books={product} AddBookInCart={AddBookInCart} />
+        <CartContainer price="$18" bookId={1} AddBookInCart={AddBookInCart} />
       </div>
       <DescriptionLine
         age="8 - 12 years"

@@ -64,6 +64,7 @@ export const UpdateBook = (getBook, bookInCart, quantity) => {
     bookName: getBook.bookName,
     price: getBook.price,
     count: 1,
+    image: getBook.image,
   }
 }
 
@@ -73,20 +74,18 @@ const App = () => {
   const [cartList, setCartList] = useState([])
 
   const AddBookInCart = (id) => {
-    
-    const getBook = product.map((book) => book.id === id)
+    let getBook = product.find(book => book.id === id)
+
     const getBookIndex = cartList.findIndex((book) => book.id === id)
     const bookInCart = cartList[getBookIndex]
 
     const newBook = UpdateBook(getBook, bookInCart, 1)
     const newArray = UpdateCartList(cartList, newBook, getBookIndex)
-  
     setCartList(newArray)
-  }
 
+  }
   
   const DeletePurchasedBook = (id) => {
-  
       const getBook = product.map((bookName) => bookName.id === id)
       const getBookIndex = cartList.findIndex((book) => book.id === id)
       const bookInCart = cartList[getBookIndex]
