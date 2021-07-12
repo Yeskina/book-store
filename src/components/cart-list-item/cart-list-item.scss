@@ -1,0 +1,42 @@
+.cart {
+  background: #fff;
+  padding: 5px 25px;
+
+  table {
+    border-collapse: collapse;
+    // width: 100%;
+    width: 800px;
+    .headers {
+      display: table-row;
+      border-bottom: 1px solid #e1e1e3;
+
+      .cart-item-description-header {
+        text-align: inherit;
+      }
+    }
+
+    .align-top {
+      vertical-align: top;
+    }
+
+    .cart-list-item__name {
+      padding-left: 20px;
+      width: 480px;
+    // width: 62%;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .price, .quantity {
+      padding: 20px 10px;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      padding: 20px 10px;
+    }
+  }
+}

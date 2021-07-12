@@ -1,18 +1,38 @@
 import CartListItem from '../cart-list-item/cart-list-item'
+import '../cart-list-item/cart-list-item.scss'
 
 const CartList = ({ cartList, DeletePurchasedBook }) => {
   return (
-    <ul className="cart-list">
+    <div className="cart">
+            <h1>ShoppingCart</h1>
+
       {cartList.map((cart) => {
         const { id } = cart
-
         return (
-          <li key={id}>
+          <div key={id}>
             <CartListItem cart={cart} DeletePurchasedBook={DeletePurchasedBook} />
-          </li>
+          </div>
         )
       })}
-    </ul>
+      <table>
+      <tbody>
+          <tr className="cart-total">
+            <td colSpan="4" className="text-right">
+              <h5>Total:</h5>
+            </td>
+            <td>
+              {cartList.map((cart) => {
+                const {price} = cart
+                console.warn(price)
+                return (
+                  <h5 className="font-sans-semibold px-4 text-lg text-right">{price}</h5>
+                )
+              })}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   )
 }
 

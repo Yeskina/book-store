@@ -2,4 +2,8 @@
   width: 528px;
   flex-direction: column;
   margin-left: 50px;
+
+  @media (max-width: 1290px) {
+    width: 100%;
+  }
 }

@@ -1,5 +1,5 @@
 import './App.scss'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import product from '../../products'
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
@@ -64,36 +64,45 @@ export const UpdateBook = (getBook, bookInCart, quantity) => {
     bookName: getBook.bookName,
     price: getBook.price,
     count: 1,
+    author: getBook.author,
     image: getBook.image,
   }
 }
 
-
-
 const App = () => {
   const [cartList, setCartList] = useState([])
 
-  const AddBookInCart = (id) => {
-    let getBook = product.find(book => book.id === id)
+useEffect(()=>{
+  const data = localStorage.getItem('book')
+  if(data){
+    setCartList(JSON.parse(data))
+   }
+  },[])
 
+  useEffect(() => {
+    localStorage.setItem('book', JSON.stringify(cartList))
+  }, [cartList])
+
+  const AddBookInCart = (id) => {
+    const getBook = product.find((book) => book.id === id)
     const getBookIndex = cartList.findIndex((book) => book.id === id)
     const bookInCart = cartList[getBookIndex]
 
     const newBook = UpdateBook(getBook, bookInCart, 1)
     const newArray = UpdateCartList(cartList, newBook, getBookIndex)
-    setCartList(newArray)
+   setCartList(newArray)
 
   }
-  
+
   const DeletePurchasedBook = (id) => {
-      const getBook = product.map((bookName) => bookName.id === id)
-      const getBookIndex = cartList.findIndex((book) => book.id === id)
-      const bookInCart = cartList[getBookIndex]
-  
-      const newBook = UpdateBook(getBook, bookInCart, -bookInCart.count)
-      const newArray = UpdateCartList(cartList, newBook, getBookIndex)
-  
-      setCartList(newArray)
+    const getBook = product.map((bookName) => bookName.id === id)
+    const getBookIndex = cartList.findIndex((book) => book.id === id)
+    const bookInCart = cartList[getBookIndex]
+
+    const newBook = UpdateBook(getBook, bookInCart, -bookInCart.count)
+    const newArray = UpdateCartList(cartList, newBook, getBookIndex)
+
+    setCartList(newArray)
   }
   const Home = () => {
     let [showChat, setShowChat] = useState(true)
@@ -104,7 +113,7 @@ const App = () => {
     return (
       <div className="main-container">
         <h1 className="shop-name">BookWorm</h1>
-        <img className="main-quote" src={mainQuote}></img>
+        <img className="main-quote" alt="main-quote" src={mainQuote}></img>
         <h1 className="books-name">PICKS OF THE SEASON</h1>
         <div className="books-container">
           <div className="book-img-container">
@@ -270,49 +279,49 @@ const App = () => {
               <Quotes />
             </Route>
             <Route path="/first-book">
-              <FirstBook AddBookInCart={AddBookInCart} product={product}/>
+              <FirstBook AddBookInCart={AddBookInCart} product={product} />
             </Route>
             <Route path="/second-book">
-              <SecondBook AddBookInCart={AddBookInCart} product={product}/>
+              <SecondBook AddBookInCart={AddBookInCart} product={product} />
             </Route>
             <Route path="/third-book">
-              <ThirdBook AddBookInCart={AddBookInCart}/>
+              <ThirdBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/fourth-book">
-              <FourthBook AddBookInCart={AddBookInCart}/>
+              <FourthBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/fifth-book">
-              <FifthBook AddBookInCart={AddBookInCart}/>
+              <FifthBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/sixth-book">
-              <SixthBook AddBookInCart={AddBookInCart}/>
+              <SixthBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/seventh-book">
-              <SeventhBook AddBookInCart={AddBookInCart}/>
+              <SeventhBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/eighth-book">
-              <EighthBook AddBookInCart={AddBookInCart}/>
+              <EighthBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/ninth-book">
-              <NinthBook AddBookInCart={AddBookInCart}/>
+              <NinthBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/tenth-book">
-              <TenthBook AddBookInCart={AddBookInCart}/>
+              <TenthBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/eleventh-book">
-              <EleventhBook AddBookInCart={AddBookInCart}/>
+              <EleventhBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/twelfth-book">
-              <TwelfthBook AddBookInCart={AddBookInCart}/>
+              <TwelfthBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/thirteenth-book">
-              <ThirteenthBook AddBookInCart={AddBookInCart}/>
+              <ThirteenthBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/fourteenth-book">
-              <FourteenthBook AddBookInCart={AddBookInCart}/>
+              <FourteenthBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/fifteenth-book">
-              <FifteenthBook AddBookInCart={AddBookInCart}/>
+              <FifteenthBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/">
               <Home />

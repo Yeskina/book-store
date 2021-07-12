@@ -1,8 +1,11 @@
 
   .author-container {
     width: 900px;
+
+    @media (max-width: 1290px) {
+      width: 100%;
+    }
     .biography {
       margin-left: 15px;
-
     }
   }
