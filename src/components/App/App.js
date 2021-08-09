@@ -279,10 +279,10 @@ useEffect(()=>{
               <Quotes />
             </Route>
             <Route path="/first-book">
-              <FirstBook AddBookInCart={AddBookInCart} product={product} />
+              <FirstBook AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/second-book">
-              <SecondBook AddBookInCart={AddBookInCart} product={product} />
+              <SecondBook AddBookInCart={AddBookInCart}/>
             </Route>
             <Route path="/third-book">
               <ThirdBook AddBookInCart={AddBookInCart} />

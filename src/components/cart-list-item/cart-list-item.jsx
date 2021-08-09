@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './cart-list-item.scss'
 
 const CartListItem = ({ cart, DeletePurchasedBook }) => {
   const { bookName, author, price, id, image } = cart
   const [count, setCount] = useState(1)
+  const addCountHandler = () => setCount(count + 1)
+  const removeCountHandler = () => (count === 1 ? count : setCount(count - 1))
 
   return (
     <div className="cart">
-      {/* <h1>ShoppingCart</h1> */}
       <table className="cart-list-items">
         <thead>
           <tr className="headers">
@@ -25,15 +26,15 @@ const CartListItem = ({ cart, DeletePurchasedBook }) => {
               <img src={image} alt="book-cover"></img>
             </td>
             <td colSpan="2" className="cart-list-item__name">
-              <h3 >{bookName}</h3>
+              <h3>{bookName}</h3>
               <div>{author}</div>
             </td>
             <td className="quantity">
-              <button className="button-cart" onClick={() => setCount(count - 1)}>
+              <button className="button-cart" onClick={removeCountHandler}>
                 -
               </button>
               <span className="cart-list-item__count">{count}</span>
-              <button className="button-cart" onClick={() => setCount(count + 1)}>
+              <button className="button-cart" onClick={addCountHandler}>
                 +
               </button>
             </td>
@@ -55,16 +56,6 @@ const CartListItem = ({ cart, DeletePurchasedBook }) => {
             </td>
           </tr>
         </tbody>
-        {/* <tbody>
-          <tr className="cart-total">
-            <td colSpan="4" className="text-right">
-              <h5>Total:</h5>
-            </td>
-            <td>
-              <h5 className="font-sans-semibold px-4 text-lg text-right">{price}</h5>
-            </td>
-          </tr>
-        </tbody> */}
       </table>
     </div>
   )

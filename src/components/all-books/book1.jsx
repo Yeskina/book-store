@@ -5,60 +5,13 @@ import CartContainer from '../cart-window/cart-window'
 import BookDescription from '../book-description/book-description'
 import Author from '../author/author'
 import BookDetails from '../book-details/book-details'
+import product from '../../products'
 
 import './all-books.scss'
 
 const FirstBook = ({ AddBookInCart }) => {
-  
-  const bookDescription = () => {
-    return (
-      <div>
-        <p>
-          <i>
-            Dear Uncle Herbert, You've never met me, but I'm your niece Kate, and since it is my
-            birthday tomorrow and you are super-rich could you please send me a present?
-          </i>
-        </p>
-        <p>
-          Kate and her younger brother Tom lead dull, uninteresting lives. And if their dull,
-          uninteresting parents are anything to go by, they don't have much to look forward to. Why
-          can't Kate have thrilling adventures and save the world the way people do in books? Even
-          her 11th birthday is shaping up to be mundane -- that is, until her mysterious and highly
-          irresponsible Uncle Herbert, whom she's never even met before, surprises her with the most
-          unexpected, exhilarating, inappropriate birthday present of all time: a colossal steam
-          locomotive called the Silver Arrow.
-        </p>
-        <p>
-          Kate and Tom's parents want to send it right back where it came from. But Kate and Tom
-          have other ideas -- and so does the Silver Arrow -- and soon they're off to distant lands
-          along magical rail lines in the company of an assortment of exotic animals who, it turns
-          out, can talk. With only curiosity, excitement, their own resourcefulness and the thrill
-          of the unknown to guide them, Kate and Tom are on the adventure of a lifetime . . . and
-          who knows? They just might end up saving the world after all.
-        </p>
-        <p>
-          This thrilling fantasy adventure will not only entertain young readers but inspire them to
-          see the beautiful, exciting, and precious world around them with new eyes.
-        </p>
-      </div>
-    )
-  }
+  // const { bookDesc } = cart
 
-  const author = () => {
-    return (
-      <div>
-        <b>Lev Grossman</b> is the author of five novels including the #1 <i>New York Times</i>
-        bestselling Magicians trilogy, which has been published in thirty countries. A TV adaptation
-        of the trilogy is now in its fifth season as the top-rated show on Syfy. Grossman is also an
-        award-winning journalist who spent fifteen years as the book critic and lead technology
-        writer at <i>Time</i> magazine, where he published more than twenty cover stories. In
-        addition he has written for the <i>New York Times</i>, the <i>Wall Street Journal</i>,
-        <i>Wired</i>, the <i>Believer</i>, the
-        <i>Village Voice</i>, NPR, Salon, Slate, and Buzzfeed, among many others. He lives in New
-        York City with his wife and three children.
-      </div>
-    )
-  }
   return (
     <div className="main-container">
       <div className="container">
@@ -67,7 +20,7 @@ const FirstBook = ({ AddBookInCart }) => {
           <BookDescription
             bookName="The Silver arrow"
             author="Lev Grossman"
-            bookDescription={bookDescription()}
+            bookDescription={product.find((book) => book.id === 1).bookDesc()}
             authorLink={"https://en.wikipedia.org/wiki/Lev_Grossman"}
           />
         </div>
@@ -81,7 +34,7 @@ const FirstBook = ({ AddBookInCart }) => {
         grade="3-7"
         publisher="Little"
       />
-      <Author author={author()} />
+      <Author author={product.find((book) => book.id === 1).biography()} />
       <BookDetails
         publisher="Little, Brown Books for Young Readers"
         language="English"
