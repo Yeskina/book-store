@@ -24,7 +24,6 @@ const CartList = ({ cartList, DeletePurchasedBook }) => {
             <td>
               {cartList.map((cart) => {
                 const { price } = cart
-                const arr = []
                 console.warn(price)
                 return <h5 className="font-sans-semibold px-4 text-lg text-right">{price}</h5>
               })}

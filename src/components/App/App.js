@@ -3,40 +3,27 @@ import React, { useState, useEffect } from 'react'
 import product from '../../products'
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import FirstBook from '../all-books/book1'
-import SecondBook from '../all-books/book2'
-import ThirdBook from '../all-books/book3'
-import FourthBook from '../all-books/book4'
-import FifthBook from '../all-books/book5'
-import SixthBook from '../all-books/book6'
-import SeventhBook from '../all-books/book7'
-import EighthBook from '../all-books/book8'
-import NinthBook from '../all-books/book9'
-import TenthBook from '../all-books/book10'
-import EleventhBook from '../all-books/book11'
-import TwelfthBook from '../all-books/book12'
-import ThirteenthBook from '../all-books/book13'
-import FourteenthBook from '../all-books/book14'
-import FifteenthBook from '../all-books/book15'
+import Book from '../book/book'
+
 import Quotes from '../quotes/quotes.jsx'
 
-import book1 from '../images/the-silver-arrow.jpg'
-import book2 from '../images/sleep-donation.jpg'
-import book3 from '../images/9780593139134.jpg'
-import book4 from '../images/9781524748685.jpg'
-import book5 from '../images/9781982108847.jpg'
-import book6 from '../images/howIBuiltThis.jpg'
-import book7 from '../images/DessertPerson.jpg'
-import book8 from '../images/Lakota.jpg'
-import book9 from '../images/Circe.jpg'
-import book10 from '../images/waterProtectors.jpg'
-import book11 from '../images/longRiverOfSoul.jpg'
-import book12 from '../images/microRPG.jpg'
-import book13 from '../images/YearMonkey.jpg'
-import book14 from '../images/erosin.jpg'
-import book15 from '../images/origami2.jpg'
+import book1 from '../images/images/the-silver-arrow.jpg'
+import book2 from '../images/images/sleep-donation.jpg'
+import book3 from '../images/images/9780593139134.jpg'
+import book4 from '../images/images/9781524748685.jpg'
+import book5 from '../images/images/9781982108847.jpg'
+import book6 from '../images/images/howIBuiltThis.jpg'
+import book7 from '../images/images/DessertPerson.jpg'
+import book8 from '../images/images/Lakota.jpg'
+import book9 from '../images/images/Circe.jpg'
+import book10 from '../images/images/waterProtectors.jpg'
+import book11 from '../images/images/longRiverOfSoul.jpg'
+import book12 from '../images/images/microRPG.jpg'
+import book13 from '../images/images/YearMonkey.jpg'
+import book14 from '../images/images/erosin.jpg'
+import book15 from '../images/images/origami2.jpg'
 import Chat from '../chat/chat.jsx'
-import mainQuote from '../big-images/quote.jpg'
+import mainQuote from '../images/big-images/quote.jpg'
 import CartList from '../cart-list/cart-list.jsx'
 
 export const UpdateCartList = (cartList, newBook, index) => {
@@ -117,21 +104,21 @@ useEffect(()=>{
         <h1 className="books-name">PICKS OF THE SEASON</h1>
         <div className="books-container">
           <div className="book-img-container">
-            <a href="/first-book">
+            <a href="/book/1">
               <img className="season-books" src={book1} alt="The Silver Arrow"></img>
             </a>
             <b>The Silver Arrow</b>
             <div>by Lev Grossman</div>
           </div>
           <div className="book-img-container">
-            <a href="/second-book">
+            <a href="/book/2">
               <img className="season-books" src={book2} alt="Sleep Donation"></img>
             </a>
             <b>Sleep Donation</b>
             <div>by Karen Russell</div>
           </div>
           <div className="book-img-container">
-            <a href="/third-book">
+            <a href="/book/3">
               <img className="season-book3" src={book3} alt="Greenlights"></img>
             </a>
             <b>Greenlights</b>
@@ -139,14 +126,14 @@ useEffect(()=>{
             <div>McConaughey</div>
           </div>
           <div className="book-img-container">
-            <a href="/fourth-book">
+            <a href="/book/4">
               <img className="season-books" src={book4} alt="Stephen Hawking"></img>
             </a>
             <b>Stephen Hawking</b>
             <div style={{ textAlign: 'center' }}>by Leonard Mlodinow</div>
           </div>
           <div className="book-img-container">
-            <a href="/fifth-book">
+            <a href="/book/5">
               <img className="season-books" src={book5} alt="Magic Lessons"></img>
             </a>
             <b>Magic Lessons</b>
@@ -156,35 +143,35 @@ useEffect(()=>{
         <h1 className="books-name">FEATURED BESTSELLERS</h1>
         <div className="books-container">
           <div className="book-img-container">
-            <a href="/sixth-book">
+            <a href="/book/6">
               <img className="season-books" src={book6} alt="How I Built This"></img>
             </a>
             <b>How I Built This</b>
             <div>by Guy Raz</div>
           </div>
           <div className="book-img-container">
-            <a href="/seventh-book">
+            <a href="/book/7">
               <img className="season-books" src={book7} alt="Dessert Person"></img>
             </a>
             <b>Dessert Person</b>
             <div>by Claire Saffitz</div>
           </div>
           <div className="book-img-container">
-            <a href="/eighth-book">
+            <a href="/book/8">
               <img className="season-books" src={book8} alt="Lakota America"></img>
             </a>
             <b>Lakota America</b>
             <div style={{ textAlign: 'center' }}>by Pekka Hamalainen</div>
           </div>
           <div className="book-img-container">
-            <a href="/ninth-book">
+            <a href="/book/9">
               <img className="season-books" src={book9} alt="Circe"></img>
             </a>
             <b>Circe</b>
             <div>by Madeline Miller</div>
           </div>
           <div className="book-img-container">
-            <a href="/tenth-book">
+            <a href="/book/10">
               <img className="season-book5" src={book10} alt="We Are Water"></img>
             </a>
             <b>We Are Water</b>
@@ -196,7 +183,7 @@ useEffect(()=>{
         <h1 className="books-name">GREAT BOOKS UNDER $15 AND $25</h1>
         <div className="books-container">
           <div className="book-img-container">
-            <a href="/eleventh-book">
+            <a href="/book/11">
               <img className="season-books" src={book11} alt="One Long River of"></img>
             </a>
             <b>One Long River of</b>
@@ -204,7 +191,7 @@ useEffect(()=>{
             <div>by Brian Doyle</div>
           </div>
           <div className="book-img-container">
-            <a href="/twelfth-book">
+            <a href="/book/12">
               <img className="season-book3" src={book12} alt="The Ultimate"></img>
             </a>
             <b>The Ultimate</b>
@@ -212,7 +199,7 @@ useEffect(()=>{
             <div>by James D'Amato</div>
           </div>
           <div className="book-img-container">
-            <a href="/thirteenth-book">
+            <a href="/book/13">
               <img className="season-books" src={book13} alt="Year of the"></img>
             </a>
             <b>Year of the</b>
@@ -220,7 +207,7 @@ useEffect(()=>{
             <div>by Patti Smith</div>
           </div>
           <div className="book-img-container">
-            <a href="/fourteenth-book">
+            <a href="/book/14">
               <img className="season-books" src={book14} alt="Erosion"></img>
             </a>
             <b>Erosion</b>
@@ -228,7 +215,7 @@ useEffect(()=>{
             <div>William</div>
           </div>
           <div className="book-img-container">
-            <a href="/fifteenth-book">
+            <a href="/book/15">
               <img className="season-book5" src={book15} alt="Star Wars Origami"></img>
             </a>
             <b>Star Wars Origami</b>
@@ -278,50 +265,8 @@ useEffect(()=>{
             <Route path="/quotes">
               <Quotes />
             </Route>
-            <Route path="/first-book">
-              <FirstBook AddBookInCart={AddBookInCart} />
-            </Route>
-            <Route path="/second-book">
-              <SecondBook AddBookInCart={AddBookInCart}/>
-            </Route>
-            <Route path="/third-book">
-              <ThirdBook AddBookInCart={AddBookInCart} />
-            </Route>
-            <Route path="/fourth-book">
-              <FourthBook AddBookInCart={AddBookInCart} />
-            </Route>
-            <Route path="/fifth-book">
-              <FifthBook AddBookInCart={AddBookInCart} />
-            </Route>
-            <Route path="/sixth-book">
-              <SixthBook AddBookInCart={AddBookInCart} />
-            </Route>
-            <Route path="/seventh-book">
-              <SeventhBook AddBookInCart={AddBookInCart} />
-            </Route>
-            <Route path="/eighth-book">
-              <EighthBook AddBookInCart={AddBookInCart} />
-            </Route>
-            <Route path="/ninth-book">
-              <NinthBook AddBookInCart={AddBookInCart} />
-            </Route>
-            <Route path="/tenth-book">
-              <TenthBook AddBookInCart={AddBookInCart} />
-            </Route>
-            <Route path="/eleventh-book">
-              <EleventhBook AddBookInCart={AddBookInCart} />
-            </Route>
-            <Route path="/twelfth-book">
-              <TwelfthBook AddBookInCart={AddBookInCart} />
-            </Route>
-            <Route path="/thirteenth-book">
-              <ThirteenthBook AddBookInCart={AddBookInCart} />
-            </Route>
-            <Route path="/fourteenth-book">
-              <FourteenthBook AddBookInCart={AddBookInCart} />
-            </Route>
-            <Route path="/fifteenth-book">
-              <FifteenthBook AddBookInCart={AddBookInCart} />
+            <Route path="/book/:id" >
+              <Book AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/">
               <Home />
