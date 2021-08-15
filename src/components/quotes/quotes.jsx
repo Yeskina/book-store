@@ -1,16 +1,16 @@
 import './quotes.scss'
 
-import img1 from '../quotes-images/a-room-without-books-body-without-soul-cicero-quote-min-622x622.jpg'
-import img2 from '../quotes-images/take-a-good-book-to-bed-thea-dorn-min-622x622.jpg'
-import img3 from '../quotes-images/outside-of-a-dog-book-mans-best-friend-groucho-marx-quote-min-622x622.jpg'
-import img4 from '../quotes-images/human-nature-weakness-bookstore-henry-ward-bleecher-min-622x622.jpg'
-import img5 from '../quotes-images/books-are-uniquely-portable-magic-stephen-king-quote-min-622x622.jpg'
-import img6 from '../quotes-images/you-can-never-get-a-book-long-enough-cs-lewis-quote-min-622x622.jpg'
-import img7 from '../quotes-images/believe-something-magical-happens-reading-jk-rowling-quote-min-622x622.jpg.webp'
-import img8 from '../quotes-images/a-book-is-a-dream-neil-gaiman-quote-min-622x622.jpg.webp'
-import img9 from '../quotes-images/worst-thing-about-new-books-joseph-joubert-quote-min-622x622.jpg.webp'
-import img10 from '../quotes-images/never-trust-anyone-who-has-not-brought-a-book-lemony-snicket-quote-min-622x622.jpg.webp'
-import img11 from '../quotes-images/we-live-for-books-umberto-eco-quote-min-622x622.jpg.webp'
+import img1 from '../images/quotes-images/a-room-without-books-body-without-soul-cicero-quote-min-622x622.jpg'
+import img2 from '../images/quotes-images/take-a-good-book-to-bed-thea-dorn-min-622x622.jpg'
+import img3 from '../images/quotes-images/outside-of-a-dog-book-mans-best-friend-groucho-marx-quote-min-622x622.jpg'
+import img4 from '../images/quotes-images/human-nature-weakness-bookstore-henry-ward-bleecher-min-622x622.jpg'
+import img5 from '../images/quotes-images/books-are-uniquely-portable-magic-stephen-king-quote-min-622x622.jpg'
+import img6 from '../images/quotes-images/you-can-never-get-a-book-long-enough-cs-lewis-quote-min-622x622.jpg'
+import img7 from '../images/quotes-images/believe-something-magical-happens-reading-jk-rowling-quote-min-622x622.jpg.webp'
+import img8 from '../images/quotes-images/a-book-is-a-dream-neil-gaiman-quote-min-622x622.jpg.webp'
+import img9 from '../images/quotes-images/worst-thing-about-new-books-joseph-joubert-quote-min-622x622.jpg.webp'
+import img10 from '../images/quotes-images/never-trust-anyone-who-has-not-brought-a-book-lemony-snicket-quote-min-622x622.jpg.webp'
+import img11 from '../images/quotes-images/we-live-for-books-umberto-eco-quote-min-622x622.jpg.webp'
 
 const Quotes = () => {
   return (

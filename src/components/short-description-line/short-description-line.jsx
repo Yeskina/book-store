@@ -1,13 +1,11 @@
 import './short-description-line.scss'
 
-import icon1 from '../icons/baby-boy.png'
-import icon2 from '../icons/book.png'
-import icon3 from '../icons/worldwide.png'
-import icon4 from '../icons/calendar.png'
-import icon7 from '../icons/badge.png'
-import icon8 from '../icons/office.svg'
-
-
+import icon1 from '../images/icons/baby-boy.png'
+import icon2 from '../images/icons/book.png'
+import icon3 from '../images/icons/worldwide.png'
+import icon4 from '../images/icons/calendar.png'
+import icon7 from '../images/icons/badge.png'
+import icon8 from '../images/icons/office.svg'
 
 const DescriptionLine = ({ age, pages, language, date, grade, publisher}) => {
   return (

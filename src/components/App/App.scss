@@ -7,7 +7,7 @@ body {
 
 body::after {
   content: '';
-  background-image: url(../big-images//background4.jpg);
+  background-image: url(../images/big-images//background4.jpg);
   width: 100%;
   top: 0;
   left: 0;
@@ -20,8 +20,6 @@ body::after {
   margin: 0;
   z-index: -1;
 }
-
-
 
 .shop-name {
   text-align: center;

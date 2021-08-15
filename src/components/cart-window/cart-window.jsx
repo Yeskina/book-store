@@ -1,10 +1,9 @@
 import './cart-window.scss'
-import { Link } from 'react-router-dom'
 
-import cart from '../icons/shopping-cart.png'
-import buy from '../icons/play-button.png'
-import icon5 from '../icons/truck.png'
-import icon6 from '../icons/credit-card.png'
+import cart from '../images/icons/shopping-cart.png'
+import buy from '../images/icons/play-button.png'
+import icon5 from '../images/icons/truck.png'
+import icon6 from '../images/icons/credit-card.png'
 
 const CartContainer = ({ price, bookId, AddBookInCart }) => {
   return (
