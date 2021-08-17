@@ -17,6 +17,10 @@
 
     .align-top {
       vertical-align: top;
+
+      img {
+        width: 150px;
+      }
     }
 
     .cart-list-item__name {
@@ -29,8 +33,14 @@
       text-align: right;
     }
 
-    .price, .quantity {
+    .quantity {
       padding: 20px 10px;
+      display: flex;
+    }
+
+    .price {
+      padding: 20px 10px;
+
     }
 
     svg {

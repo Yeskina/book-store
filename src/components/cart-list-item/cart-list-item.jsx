@@ -8,7 +8,7 @@ const CartListItem = ({ cart, DeletePurchasedBook }) => {
   const removeCountHandler = () => (count === 1 ? count : setCount(count - 1))
 
   return (
-    <div className="cart">
+     <div className="cart">
       <table className="cart-list-items">
         <thead>
           <tr className="headers">

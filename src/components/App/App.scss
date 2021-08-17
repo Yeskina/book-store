@@ -34,6 +34,9 @@ body::after {
 
 .header {
   width: 100%;
+  background: #e6d1c3;
+  display: flex;
+  justify-content: center;
 
   ul {
     list-style-type: none;
@@ -44,6 +47,7 @@ body::after {
       padding: 0 20px;
       a {
         text-decoration: none;
+        color: #000;
       }
     }
   }

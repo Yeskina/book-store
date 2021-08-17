@@ -70,6 +70,10 @@ useEffect(()=>{
     localStorage.setItem('book', JSON.stringify(cartList))
   }, [cartList])
 
+  const BookInCart = () => {
+    return window.alert('The book was added to the cart')
+  }
+
   const AddBookInCart = (id) => {
     const getBook = product.find((book) => book.id === id)
     const getBookIndex = cartList.findIndex((book) => book.id === id)
@@ -78,6 +82,7 @@ useEffect(()=>{
     const newBook = UpdateBook(getBook, bookInCart, 1)
     const newArray = UpdateCartList(cartList, newBook, getBookIndex)
    setCartList(newArray)
+   BookInCart()
 
   }
 
@@ -231,7 +236,7 @@ useEffect(()=>{
             and discounts
           </div>
           <div>
-            <input type="text" placeholder="Enter your email" size="40"></input>
+            <input type="text" placeholder="Enter your email" size="40" required></input>
             <button onClick={Subscription}>SUBSCRIBE</button>
           </div>
         </div>

@@ -23,7 +23,7 @@
   .value {
     font-size: 30px;
     color: red;
-    margin-left: 20px;
+    margin-left: 10px;
   }
 
   .in-stock {
@@ -45,7 +45,7 @@
     @include flex;
     flex-direction: column;
     margin-top: 20px;
-  
+
     .cart {
       height: 50px;
       width: 200px;
@@ -54,6 +54,7 @@
       justify-content: center;
       background: #eac553c2;
       border: 1px solid #e2b321e0;
+      cursor: pointer;
 
       .image-cart {
         width: 32px;
@@ -70,6 +71,13 @@
       justify-content: center;
       background: #eac553c2;
       border: 1px solid #e2b321e0;
+
+      a {
+        display: flex;
+        align-items: center;
+        color: #000;
+        text-decoration: none;
+      }
 
       .image-buy {
         width: 32px;

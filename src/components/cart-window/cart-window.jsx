@@ -6,10 +6,11 @@ import icon5 from '../images/icons/truck.png'
 import icon6 from '../images/icons/credit-card.png'
 
 const CartContainer = ({ price, bookId, AddBookInCart }) => {
+
   return (
     <div className="cart-container">
       <div className="price">
-        Price:<div className="value">{price}</div>
+        Price:<div className="value">${price}</div>
       </div>
       <div className="in-stock">In Stock.</div>
       <b>Arrives in 2-5 days</b>
@@ -35,7 +36,10 @@ const CartContainer = ({ price, bookId, AddBookInCart }) => {
         </button>
 
         <button className="buy">
-          <img className="image-buy" src={buy} alt="play-button"></img>Buy Now
+          <a href="https://yeskina.github.io/credit-card/" target="blank">
+            <img className="image-buy" src={buy} alt="play-button"></img>
+            <div>Buy Now</div>
+          </a>
         </button>
       </div>
     </div>
