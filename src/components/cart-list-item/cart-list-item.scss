@@ -26,11 +26,19 @@
     .cart-list-item__name {
       padding-left: 20px;
       width: 480px;
-    // width: 62%;
+      // width: 62%;
     }
 
-    .text-right {
-      text-align: right;
+    .cart-total {
+      font-size: 22px;
+      .text-right {
+        text-align: right;
+        width: 100%;
+      }
+
+      .sum {
+        margin-left: 5px;
+      }
     }
 
     .quantity {
@@ -40,13 +48,37 @@
 
     .price {
       padding: 20px 10px;
-
     }
 
     svg {
       width: 16px;
       height: 16px;
       padding: 20px 10px;
+    }
+  }
+
+  .buttons-container {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      border-radius: 35px;
+      background-color: #f59999;
+      text-decoration: none;
+      color: #000;
+      margin-left: 15px;
+      font-size: 15px;
+      height: 50px;
+      width: 130px;
+
+      &:last-of-type {
+        width: 80px;
+    }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
     }
   }
 }

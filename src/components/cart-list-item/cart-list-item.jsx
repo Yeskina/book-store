@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './cart-list-item.scss'
 
 const CartListItem = ({ cart, DeletePurchasedBook }) => {
@@ -39,7 +39,7 @@ const CartListItem = ({ cart, DeletePurchasedBook }) => {
               </button>
             </td>
             <td className="price">
-              <span className="cart-list-item__total-price">{price}</span>
+              <span className="cart-list-item__total-price">${price}</span>
             </td>
             <td>
               <svg
