@@ -1,6 +1,15 @@
+import React from 'react'
+
 import './book-description.scss'
 
-const BookDescription = ({ bookName, author, bookDescription, authorLink }) => {
+interface BookDescriptionInfo {
+  bookName: string
+  author: string
+  bookDescription: () => void
+  authorLink: string
+}
+
+const BookDescription: React.FC<BookDescriptionInfo> = ({ bookName, author, bookDescription, authorLink }) => {
   return (
     <div className="book-description">
       <h2>{bookName}</h2>

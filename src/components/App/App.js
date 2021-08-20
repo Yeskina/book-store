@@ -5,7 +5,7 @@ import product from '../../products'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Book from '../book/book'
 
-import Quotes from '../quotes/quotes.jsx'
+import Quotes from '../quotes/quotes'
 
 import book1 from '../images/images/the-silver-arrow.jpg'
 import book2 from '../images/images/sleep-donation.jpg'
@@ -22,9 +22,29 @@ import book12 from '../images/images/microRPG.jpg'
 import book13 from '../images/images/YearMonkey.jpg'
 import book14 from '../images/images/erosin.jpg'
 import book15 from '../images/images/origami2.jpg'
-import Chat from '../chat/chat.jsx'
+import Chat from '../chat/chat'
 import mainQuote from '../images/big-images/quote.jpg'
-import CartList from '../cart-list/cart-list.jsx'
+import CartList from '../cart-list/cart-list'
+
+// interface CartListInfo {
+//   cartList: Array<{
+//     id: number
+//     price: number
+//     count: number
+//     bookName: string
+//     author: string
+//     image: string
+//   }>
+//   index: number
+//   newBook:  {
+//     id: number
+//     price: number
+//     count: number
+//     bookName: string
+//     author: string
+//     image: string
+//   }
+// }
 
 export const UpdateCartList = (cartList, newBook, index) => {
   if (newBook.count === 0) {
@@ -59,12 +79,12 @@ export const UpdateBook = (getBook, bookInCart, quantity) => {
 const App = () => {
   const [cartList, setCartList] = useState([])
 
-useEffect(()=>{
-  const data = localStorage.getItem('book')
-  if(data){
-    setCartList(JSON.parse(data))
-   }
-  },[])
+  useEffect(() => {
+    const data = localStorage.getItem('book')
+    if (data) {
+      setCartList(JSON.parse(data))
+    }
+  }, [])
 
   useEffect(() => {
     localStorage.setItem('book', JSON.stringify(cartList))
@@ -81,9 +101,8 @@ useEffect(()=>{
 
     const newBook = UpdateBook(getBook, bookInCart, 1)
     const newArray = UpdateCartList(cartList, newBook, getBookIndex)
-   setCartList(newArray)
-   BookInCart()
-
+    setCartList(newArray)
+    BookInCart()
   }
 
   const DeletePurchasedBook = (id) => {
@@ -97,7 +116,7 @@ useEffect(()=>{
     setCartList(newArray)
   }
   const Home = () => {
-    let [showChat, setShowChat] = useState(true)
+    const [showChat, setShowChat] = useState(true)
 
     const Subscription = () => {
       return window.alert('You are subscribed now!')
@@ -201,7 +220,7 @@ useEffect(()=>{
             </a>
             <b>The Ultimate</b>
             <b>Micro-RPG Book</b>
-            <div>by James D'Amato</div>
+            <div>by James D`Amato</div>
           </div>
           <div className="book-img-container">
             <a href="/book/13">
@@ -270,7 +289,7 @@ useEffect(()=>{
             <Route path="/quotes">
               <Quotes />
             </Route>
-            <Route path="/book/:id" >
+            <Route path="/book/:id">
               <Book AddBookInCart={AddBookInCart} />
             </Route>
             <Route path="/">

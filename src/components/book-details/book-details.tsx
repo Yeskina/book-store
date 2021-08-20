@@ -1,6 +1,16 @@
+import React from 'react'
 import './book-details.scss'
 
-const BookDetails = ({ publisher, language, pages, age, weight, size }) => {
+interface BookDetailsInfo {
+  age: string
+  pages: string
+  language: string
+  publisher: string
+  weight: string
+  size: string
+}
+
+const BookDetails: React.FC<BookDetailsInfo> = ({ publisher, language, pages, age, weight, size }) => {
   return (
     <div>
     <h2>Product details</h2>

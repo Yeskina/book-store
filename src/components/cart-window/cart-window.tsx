@@ -1,3 +1,4 @@
+import React from 'react'
 import './cart-window.scss'
 
 import cart from '../images/icons/shopping-cart.png'
@@ -5,8 +6,13 @@ import buy from '../images/icons/play-button.png'
 import icon5 from '../images/icons/truck.png'
 import icon6 from '../images/icons/credit-card.png'
 
-const CartContainer = ({ price, bookId, AddBookInCart }) => {
+interface CartContainerInfo {
+  price: number
+  bookId: number
+  AddBookInCart: (bookId: number) => void
+}
 
+const CartContainer: React.FC<CartContainerInfo> = ({ price, bookId, AddBookInCart }) => {
   return (
     <div className="cart-container">
       <div className="price">

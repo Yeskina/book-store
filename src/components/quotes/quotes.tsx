@@ -1,16 +1,18 @@
 import './quotes.scss'
 
-import img1 from '../images/quotes-images/a-room-without-books-body-without-soul-cicero-quote-min-622x622.jpg'
-import img2 from '../images/quotes-images/take-a-good-book-to-bed-thea-dorn-min-622x622.jpg'
-import img3 from '../images/quotes-images/outside-of-a-dog-book-mans-best-friend-groucho-marx-quote-min-622x622.jpg'
-import img4 from '../images/quotes-images/human-nature-weakness-bookstore-henry-ward-bleecher-min-622x622.jpg'
-import img5 from '../images/quotes-images/books-are-uniquely-portable-magic-stephen-king-quote-min-622x622.jpg'
-import img6 from '../images/quotes-images/you-can-never-get-a-book-long-enough-cs-lewis-quote-min-622x622.jpg'
-import img7 from '../images/quotes-images/believe-something-magical-happens-reading-jk-rowling-quote-min-622x622.jpg.webp'
-import img8 from '../images/quotes-images/a-book-is-a-dream-neil-gaiman-quote-min-622x622.jpg.webp'
-import img9 from '../images/quotes-images/worst-thing-about-new-books-joseph-joubert-quote-min-622x622.jpg.webp'
-import img10 from '../images/quotes-images/never-trust-anyone-who-has-not-brought-a-book-lemony-snicket-quote-min-622x622.jpg.webp'
-import img11 from '../images/quotes-images/we-live-for-books-umberto-eco-quote-min-622x622.jpg.webp'
+import quote1 from '../images/quotes-images/a-room-without-books-body-without-soul-cicero-quote-min-622x622.jpg'
+import quote2 from '../images/quotes-images/take-a-good-book-to-bed-thea-dorn-min-622x622.jpg'
+import quote3 from '../images/quotes-images/outside-of-a-dog-book-mans-best-friend-groucho-marx-quote-min-622x622.jpg'
+import quote4 from '../images/quotes-images/human-nature-weakness-bookstore-henry-ward-bleecher-min-622x622.jpg'
+import quote5 from '../images/quotes-images/books-are-uniquely-portable-magic-stephen-king-quote-min-622x622.jpg'
+import quote6 from '../images/quotes-images/you-can-never-get-a-book-long-enough-cs-lewis-quote-min-622x622.jpg'
+import quote7 from '../images/quotes-images/believe-something-magical-happens-reading-jk-rowling-quote-min-622x622.jpg.webp'
+import quote8 from '../images/quotes-images/a-book-is-a-dream-neil-gaiman-quote-min-622x622.jpg.webp'
+import quote9 from '../images/quotes-images/worst-thing-about-new-books-joseph-joubert-quote-min-622x622.jpg.webp'
+import quote10 from '../images/quotes-images/never-trust-anyone-who-has-not-brought-a-book-lemony-snicket-quote-min-622x622.jpg.webp'
+import quote11 from '../images/quotes-images/we-live-for-books-umberto-eco-quote-min-622x622.jpg.webp'
+
+import React from 'react'
 
 const Quotes = () => {
   return (
@@ -40,7 +42,7 @@ const Quotes = () => {
           books and reading!
         </p>
       </div>
-      <img src={img1}></img>
+      <img src={quote1} alt="quote"></img>
       <div className="quotes">
         <div className="author-quotes">
           “′Classic′ – a book which people praise and don’t read.” <span>– Mark Twain</span>
@@ -61,7 +63,7 @@ const Quotes = () => {
           <span>– Isabel Allende</span>
         </div>
       </div>
-      <img src={img2}></img>
+      <img src={quote2} alt="quote"></img>
       <div className="quotes">
         <div className="author-quotes">
           “If you don’t like to read, you haven’t found the right book.” <span>– J.K. Rowling</span>
@@ -83,7 +85,7 @@ const Quotes = () => {
           <span>– Jhumpa Lahiri</span>
         </div>
       </div>
-      <img src={img3}></img>
+      <img src={quote3} alt="quote"></img>
       <div className="quotes">
         <div className="author-quotes">
           “A book is a version of the world. If you do not like it, ignore it; or offer your own
@@ -105,7 +107,7 @@ const Quotes = () => {
           they tell us that dragons can be beaten.” <span>– Neil Gaiman</span>
         </div>
       </div>
-      <img src={img4}></img>
+      <img src={quote4} alt="quote"></img>
       <div className="quotes">
         <div className="author-quotes">
           “Books are good company, in sad times and happy times, for books are people – people who
@@ -129,7 +131,7 @@ const Quotes = () => {
           <span>– Mark Twain</span>
         </div>
       </div>
-      <img src={img5}></img>
+      <img src={quote5} alt="quote"></img>
       <div className="quotes">
         <div className="author-quotes">
           “The America I love still exists at the front desks of our public libraries.”
@@ -156,7 +158,7 @@ const Quotes = () => {
           <span>– Margaret Atwood</span>
         </div>
       </div>
-      <img src={img6}></img>
+      <img src={quote6} alt="quote"></img>
       <div className="quotes">
         <div className="author-quotes">
           “Books were my pass to personal freedom.”
@@ -179,7 +181,7 @@ const Quotes = () => {
           <span>– Hilary Mantel</span>
         </div>
       </div>
-      <img src={img7}></img>
+      <img src={quote7} alt="quote"></img>
       <div className="quotes">
         <div className="author-quotes">
           “Wear the old coat and buy the new book.”
@@ -204,7 +206,7 @@ const Quotes = () => {
           “Reading one book is like eating one potato chip.” <span>– Diane Duane</span>
         </div>
       </div>
-      <img src={img8}></img>
+      <img src={quote8} alt="quote"></img>
       <div className="quotes">
         <div className="author-quotes">
           “For some of us, books are as important as almost anything else on earth. What a miracle
@@ -234,7 +236,7 @@ const Quotes = () => {
           <span>– John Steinbeck</span>
         </div>
       </div>
-      <img src={img9}></img>
+      <img src={quote9} alt="quote"></img>
       <div className="quotes">
         <div className="author-quotes">
           “Libraries will get you through times of no money better than money will get you through
@@ -261,7 +263,7 @@ const Quotes = () => {
           <span>– Thomas Babington Macaulay</span>
         </div>
       </div>
-      <img src={img10}></img>
+      <img src={quote10} alt="quote"></img>
       <div className="quotes">
         <div className="author-quotes">
           Of course anyone who truly loves books buys more of them than he or she can hope to read
@@ -289,7 +291,7 @@ const Quotes = () => {
           <span>– Christopher Paolini</span>
         </div>
       </div>
-      <img src={img11}></img>
+      <img src={quote11} alt="quote"></img>
       <div className="quotes">
         <div className="author-quotes">
           “I think we ought to read only the kind of books that wound or stab us. If the book we’re

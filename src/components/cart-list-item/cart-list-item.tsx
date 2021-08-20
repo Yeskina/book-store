@@ -1,7 +1,14 @@
+import React from 'react'
+
 import { useState } from 'react'
 import './cart-list-item.scss'
 
-const CartListItem = ({ cart, DeletePurchasedBook }) => {
+interface CartListItemInfo {
+  DeletePurchasedBook: (id: number) => void
+  cart: {bookName: string, author: string, price: number, id: number, image: string}
+}
+
+const CartListItem: React.FC<CartListItemInfo> = ({ cart, DeletePurchasedBook }) => {
   const { bookName, author, price, id, image } = cart
   const [count, setCount] = useState(1)
   const addCountHandler = () => setCount(count + 1)
@@ -12,7 +19,7 @@ const CartListItem = ({ cart, DeletePurchasedBook }) => {
       <table className="cart-list-items">
         <thead>
           <tr className="headers">
-            <th className="cart-item-description-header" colSpan="3">
+            <th className="cart-item-description-header" colSpan={3}>
               Item
             </th>
             <th className="cart-item-quantity-header">Qty</th>
@@ -25,7 +32,7 @@ const CartListItem = ({ cart, DeletePurchasedBook }) => {
             <td>
               <img src={image} alt="book-cover"></img>
             </td>
-            <td colSpan="2" className="cart-list-item__name">
+            <td colSpan={2} className="cart-list-item__name">
               <h3>{bookName}</h3>
               <div>{author}</div>
             </td>

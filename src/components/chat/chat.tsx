@@ -1,10 +1,16 @@
-import { useState } from 'react'
+import { SetStateAction, useState } from 'react'
+import React from 'react'
 import './chat.scss'
 
-const Chat = ({ showChat, setShowChat }) => {
+interface ChatProps {
+  showChat: boolean
+  setShowChat: SetStateAction<any>
+}
+
+const Chat: React.FC<ChatProps> = ({ showChat, setShowChat }) => {
   const [values, setValues] = useState({ name: '', email: '', support: '' })
 
-  const saveFormData = async () => {
+  const saveFormData = async (): Promise<void> => {
     const response = await fetch('/api/registration', {
       method: 'POST',
       body: JSON.stringify(values),
@@ -14,7 +20,7 @@ const Chat = ({ showChat, setShowChat }) => {
     }
   }
 
-  const onSubmit = async (event) => {
+  const onSubmit = async (event: { preventDefault: () => void }): Promise<void> => {
     event.preventDefault()
     try {
       await saveFormData()
@@ -29,15 +35,15 @@ const Chat = ({ showChat, setShowChat }) => {
     }
   }
 
-  const set = (name) => {
-    return ({ target: { value } }) => {
+  const set = (name: string) => {
+    return ({ target: { value } }: { target: { value: string } }): void => {
       setValues((oldValues) => ({ ...oldValues, [name]: value }))
     }
   }
 
   return showChat ? (
     <div className="chat-container">
-      <button className="chat" onClick={() => setShowChat((prevState) => !prevState)}>
+      <button className="chat" onClick={() => setShowChat((prevState: boolean) => !prevState)}>
         Open Chat
       </button>
     </div>
@@ -45,7 +51,12 @@ const Chat = ({ showChat, setShowChat }) => {
     <form onSubmit={onSubmit}>
       <div>
         <h2>Leave us a message</h2>
-        <button onClick={() => setShowChat((prevState) => !prevState)} type="button" className="close" aria-label="Close">
+        <button
+          onClick={() => setShowChat((prevState: boolean) => !prevState)}
+          type="button"
+          className="close"
+          aria-label="Close"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

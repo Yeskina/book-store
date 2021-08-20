@@ -1,3 +1,4 @@
+import React from 'react'
 import { useParams } from 'react-router-dom'
 
 import DescriptionLine from '../short-description-line/short-description-line'
@@ -9,44 +10,75 @@ import product from '../../products'
 
 import './book.scss'
 
+// interface BookInfo {
+//   bookName: string
+//   author: string
+//   price: number
+//   image: string
+//   age: string
+//   pages: string
+//   language: string
+//   date: string
+//   grade: string
+//   publisher: string
+//   weight: string
+//   size: string
+//   bookDesc: any
+//   biography: any
+// }
+// const Book = ({ AddBookInCart }: { AddBookInCart: (bookId: number) => void }) => {
+
+
 const Book = ({ AddBookInCart }) => {
-  let { id } = useParams()
+  const { id } = useParams()
   const currentBook = product.find((book) => book.id === parseInt(id, 10))
+  const {
+    bookName,
+    author,
+    price,
+    image,
+    age,
+    pages,
+    language,
+    date,
+    grade,
+    publisher,
+    weight,
+    size,
+    bookDesc,
+    biography,
+  } = currentBook
 
   return (
     <div className="main-container">
       <div className="container">
         <div className="book-container">
-          <img src={currentBook.image} alt="the silver arrow"></img>
+          <img src={image} alt="the silver arrow"></img>
           <BookDescription
-            bookName={currentBook.bookName}
-            author={currentBook.author}
-            bookDescription={currentBook.bookDesc()}
+            bookName={bookName}
+            author={author}
+            bookDescription={bookDesc()}
             authorLink={'https://en.wikipedia.org/wiki/Lev_Grossman'}
           />
         </div>
-        <CartContainer
-          price={currentBook.price}
-          bookId={currentBook.id}
-          AddBookInCart={AddBookInCart}
-        />
+        <CartContainer price={price} bookId={id} AddBookInCart={AddBookInCart} />
       </div>
       <DescriptionLine
-        age={currentBook.age}
-        pages={currentBook.pages}
-        language={currentBook.language}
-        date={currentBook.date}
-        grade={currentBook.grade}
-        publisher={currentBook.publisher}
+        age={age}
+        pages={pages}
+        language={language}
+        date={date}
+        grade={grade}
+        publisher={publisher}
       />
-      <Author author={currentBook?.biography?.()} />
+      <Author author={biography?.()} />
       <BookDetails
-        publisher={currentBook.publisher}
-        language={currentBook.language}
-        pages={currentBook.pages}
-        age={currentBook.age}
-        weight={currentBook.weight}
-        size={currentBook.size}
+        publisher={publisher}
+        language={language}
+        pages={pages}
+        age={age}
+        weight={weight}
+        size={size}
       />
     </div>
   )

@@ -1,12 +1,9 @@
 import CartListItem from '../cart-list-item/cart-list-item'
-import React  from 'react';
+import React from 'react'
 
 import '../cart-list-item/cart-list-item.scss'
 
-const CartList = ({
-  cartList,
-  DeletePurchasedBook,
-}: {
+interface CartListInfo {
   cartList: Array<{
     id: number
     price: number
@@ -14,9 +11,11 @@ const CartList = ({
     bookName: string
     author: string
     image: string
-  }>,
-  DeletePurchasedBook: void
-}) => {
+  }>
+  DeletePurchasedBook: (id: number) => void
+}
+
+const CartList: React.FC<CartListInfo> = ({ cartList, DeletePurchasedBook }) => {
   console.warn(DeletePurchasedBook)
 
   const sum = () => {
@@ -29,7 +28,7 @@ const CartList = ({
       {cartList.length > 0 && (
         <div className="cart">
           <h1>ShoppingCart</h1>
-          {cartList.map((cart: { id: number }) => {
+          {cartList.map((cart) => {
             const { id } = cart
             return (
               <div key={id}>
