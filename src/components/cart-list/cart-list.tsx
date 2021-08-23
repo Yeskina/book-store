@@ -2,18 +2,7 @@ import CartListItem from '../cart-list-item/cart-list-item'
 import React from 'react'
 
 import '../cart-list-item/cart-list-item.scss'
-
-interface CartListInfo {
-  cartList: Array<{
-    id: number
-    price: number
-    count: number
-    bookName: string
-    author: string
-    image: string
-  }>
-  DeletePurchasedBook: (id: number) => void
-}
+import { CartListInfo } from '../interface'
 
 const CartList: React.FC<CartListInfo> = ({ cartList, DeletePurchasedBook }) => {
   console.warn(DeletePurchasedBook)

@@ -8,17 +8,10 @@ import icon3 from '../images/icons/worldwide.png'
 import icon4 from '../images/icons/calendar.png'
 import icon7 from '../images/icons/badge.png'
 import icon8 from '../images/icons/office.svg'
+import { BookDetailsInfo } from '../interface'
 
-interface BookDetails {
-  age: string
-  pages: string
-  language: string
-  date: string
-  grade: string
-  publisher: string
-}
 
-const DescriptionLine: React.FC<BookDetails> = ({ age, pages, language, date, grade, publisher }) => {
+const DescriptionLine: React.FC<BookDetailsInfo> = ({ age, pages, language, date, grade, publisher }) => {
   return (
     <div className="short-description-line">
       <ul className="line">

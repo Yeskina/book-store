@@ -1,10 +1,7 @@
 import React from 'react'
+import { AuthorInfo } from '../interface'
 
 import './author.scss'
-
-interface AuthorInfo {
-  author: string
-}
 
 const Author: React.FC<AuthorInfo> = ({ author }) => {
   return (

@@ -1,11 +1,7 @@
-import { SetStateAction, useState } from 'react'
+import { useState } from 'react'
 import React from 'react'
 import './chat.scss'
-
-interface ChatProps {
-  showChat: boolean
-  setShowChat: SetStateAction<any>
-}
+import { ChatProps } from '../interface'
 
 const Chat: React.FC<ChatProps> = ({ showChat, setShowChat }) => {
   const [values, setValues] = useState({ name: '', email: '', support: '' })

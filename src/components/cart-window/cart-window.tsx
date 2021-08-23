@@ -5,12 +5,7 @@ import cart from '../images/icons/shopping-cart.png'
 import buy from '../images/icons/play-button.png'
 import icon5 from '../images/icons/truck.png'
 import icon6 from '../images/icons/credit-card.png'
-
-interface CartContainerInfo {
-  price: number
-  bookId: number
-  AddBookInCart: (bookId: number) => void
-}
+import { CartContainerInfo } from '../interface'
 
 const CartContainer: React.FC<CartContainerInfo> = ({ price, bookId, AddBookInCart }) => {
   return (

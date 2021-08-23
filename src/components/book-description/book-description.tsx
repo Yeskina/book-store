@@ -1,13 +1,7 @@
 import React from 'react'
+import { BookDescriptionInfo } from '../interface'
 
 import './book-description.scss'
-
-interface BookDescriptionInfo {
-  bookName: string
-  author: string
-  bookDescription: () => void
-  authorLink: string
-}
 
 const BookDescription: React.FC<BookDescriptionInfo> = ({ bookName, author, bookDescription, authorLink }) => {
   return (
