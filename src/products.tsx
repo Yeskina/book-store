@@ -17,9 +17,10 @@ import book12 from './components/images/big-images/micro-rpg.jpg'
 import book13 from './components/images/big-images/year-monkey.jpg'
 import book14 from './components/images/big-images/erosion.webp'
 import book15 from './components/images/big-images/star-wars.jpg'
+import { Product } from './components/interface'
 
 
-const product = [
+const product: Product[] = [
   {
     id: 1,
     bookName: 'The Silver arrow',

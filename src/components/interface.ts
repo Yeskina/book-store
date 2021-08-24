@@ -4,6 +4,25 @@ export interface AuthorInfo {
   author: string
 }
 
+export interface Product {
+  bookName: string
+  count?: number
+  author: string
+  price: number
+  image: string
+  age: string
+  pages: string
+  language: string
+  date: string
+  grade: string
+  publisher: string
+  weight: string
+  size: string
+  bookDesc: any
+  biography?: any
+  id: number
+}
+
 export interface BookDescriptionInfo {
   bookName: string
   author: string

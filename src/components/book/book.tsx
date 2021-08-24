@@ -9,29 +9,16 @@ import BookDetails from '../book-details/book-details'
 import product from '../../products'
 
 import './book.scss'
-
-// interface BookInfo {
-//   bookName: string
-//   author: string
-//   price: number
-//   image: string
-//   age: string
-//   pages: string
-//   language: string
-//   date: string
-//   grade: string
-//   publisher: string
-//   weight: string
-//   size: string
-//   bookDesc: any
-//   biography: any
-// }
-// const Book = ({ AddBookInCart }: { AddBookInCart: (bookId: number) => void }) => {
+import { CartContainerInfo } from '../interface'
 
 
-const Book = ({ AddBookInCart }) => {
-  const { id } = useParams()
+
+const Book: React.FC<CartContainerInfo> = ({ AddBookInCart }) => {
+  const { id } = useParams<{id: string}>()
   const currentBook = product.find((book) => book.id === parseInt(id, 10))
+  if (!currentBook) {
+    return <div>The book is not avaliable</div>
+  }
   const {
     bookName,
     author,
@@ -61,7 +48,7 @@ const Book = ({ AddBookInCart }) => {
             authorLink={'https://en.wikipedia.org/wiki/Lev_Grossman'}
           />
         </div>
-        <CartContainer price={price} bookId={id} AddBookInCart={AddBookInCart} />
+        <CartContainer price={price} bookId={parseInt(id, 10)} AddBookInCart={AddBookInCart} />
       </div>
       <DescriptionLine
         age={age}
