@@ -35,7 +35,7 @@ const product: Product[] = [
     publisher: 'Little',
     weight: '12.8 ounces',
     size: '5.63 x 0.88 x 8 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element =>  {
       return (
         <div>
           <p>
@@ -68,9 +68,7 @@ const product: Product[] = [
         </div>
       )
     },
-    
-
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           <b>Lev Grossman</b> is the author of five novels including the #1 <i>New York Times</i>
@@ -86,7 +84,6 @@ const product: Product[] = [
       )
     },
   },
-  
   {
     id: 2,
     bookName: 'Sleeping Donation',
@@ -101,7 +98,7 @@ const product: Product[] = [
     publisher: 'Vintage',
     weight: '7.2 ounces',
     size: '5.17 x 0.51 x 7.99 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -127,7 +124,7 @@ const product: Product[] = [
         </div>
       )
     },
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           KAREN RUSSELL has received a MacArthur Fellowship and a Guggenheim Fellowship, the "5
@@ -152,7 +149,7 @@ const product: Product[] = [
     publisher: 'Random House Audio',
     weight: '7.2 ounces',
     size: '5.17 x 0.51 x 7.99 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -201,7 +198,7 @@ const product: Product[] = [
     publisher: 'Random House Audio',
     weight: '7.2 ounces',
     size: '5.17 x 0.51 x 7.99 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -230,7 +227,7 @@ const product: Product[] = [
         </div>
       )
     },
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -286,7 +283,7 @@ const product: Product[] = [
     publisher: 'Simon & Schuster Audio',
     weight: '7.2 ounces',
     size: '5.17 x 0.51 x 7.99 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -311,7 +308,7 @@ const product: Product[] = [
         </div>
       )
     },
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -364,7 +361,7 @@ const product: Product[] = [
     publisher: 'Audible Studios',
     weight: '12.8 ounces',
     size: '5.63 x 0.88 x 8 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -392,7 +389,7 @@ const product: Product[] = [
         </div>
       )
     },
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           Guy Raz is an acclaimed radio and podcast personality and creator of the popular podcasts
@@ -422,7 +419,7 @@ const product: Product[] = [
     publisher: 'Clarkson Potter',
     weight: '3.36 pounds',
     size: '8.31 x 1.22 x 11.38 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -445,7 +442,7 @@ const product: Product[] = [
         </div>
       )
     },
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           <b>Claire Saffitz</b> (born 1986) is an American pastry chef, food writer, and YouTube
@@ -475,7 +472,7 @@ const product: Product[] = [
     publisher: 'Yale University Press',
     weight: '1.53 pounds',
     size: '6.25 x 1.5 x 9 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -493,7 +490,7 @@ const product: Product[] = [
         </div>
       )
     },
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -535,7 +532,7 @@ const product: Product[] = [
     publisher: 'Back Bay Books',
     weight: '1.53 pounds',
     size: '5.5 x 1.04 x 8.25 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -567,7 +564,7 @@ const product: Product[] = [
         </div>
       )
     },
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -605,7 +602,7 @@ const product: Product[] = [
     publisher: 'Roaring Brook Press',
     weight: '10.6 ounces',
     size: '10.39 x 0.41 x 10.25 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -626,7 +623,7 @@ const product: Product[] = [
         </div>
       )
     },
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -658,7 +655,7 @@ const product: Product[] = [
     publisher: 'Back Bay Books',
     weight: '7.2 ounces',
     size: '5.38 x 0.63 x 8.25 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -688,7 +685,7 @@ const product: Product[] = [
         </div>
       )
     },
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           <b>Brian Doyle</b> (1956-2017) was born in New York and attended the University of Notre
@@ -720,7 +717,7 @@ const product: Product[] = [
     publisher: 'Adams Media',
     weight: '7.2 ounces',
     size: '8.5 x 0.4 x 10 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -745,7 +742,7 @@ const product: Product[] = [
         </div>
       )
     },
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           James D’Amato is the author of <i>The Ultimate RPG Backstory Guide</i> and{' '}
@@ -773,7 +770,7 @@ const product: Product[] = [
     publisher: 'Vintage',
     weight: '7.2 ounces',
     size: '5.4 x 0.6 x 8 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -798,7 +795,7 @@ const product: Product[] = [
         </div>
       )
     },
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -841,7 +838,7 @@ const product: Product[] = [
     publisher: 'Picador Paper',
     weight: '7.2 ounces',
     size: '5.44 x 1.04 x 8.28 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -875,7 +872,7 @@ const product: Product[] = [
         </div>
       )
     },
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -908,7 +905,7 @@ const product: Product[] = [
     publisher: 'Workman',
     weight: '7.2 ounces',
     size: '8.5 x 1 x 8 inches',
-    bookDesc: () => {
+    bookDesc: (): JSX.Element => {
       return (
         <div>
           <p>
@@ -942,7 +939,7 @@ const product: Product[] = [
         </div>
       )
     },
-    biography: () => {
+    biography: (): JSX.Element => {
       return (
         <div>
           <p>
