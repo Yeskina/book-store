@@ -25,28 +25,27 @@ import book15 from '../images/images/origami2.jpg'
 import Chat from '../chat/chat'
 import mainQuote from '../images/big-images/quote.jpg'
 import CartList from '../cart-list/cart-list'
+import { CartListInfoApp } from '../interface'
 
-// interface CartListInfo {
-//   cartList: Array<{
-//     id: number
-//     price: number
-//     count: number
-//     bookName: string
-//     author: string
-//     image: string
-//   }>
-//   index: number
-//   newBook:  {
-//     id: number
-//     price: number
-//     count: number
-//     bookName: string
-//     author: string
-//     image: string
-//   }
-// }
-
-export const UpdateCartList = (cartList, newBook, index) => {
+export const UpdateCartList = (
+  cartList: Array<{
+    id: number
+    price: number
+    count: number
+    bookName: string
+    author: string
+    image: string
+  }>,
+  newBook: {
+    id: number
+    price: number
+    count: number
+    bookName: string
+    author: string
+    image: string
+  },
+  index: number
+) => {
   if (newBook.count === 0) {
     return [...cartList.slice(0, index), ...cartList.slice(index + 1)]
   }
@@ -57,7 +56,28 @@ export const UpdateCartList = (cartList, newBook, index) => {
   return [...cartList.slice(0, index), newBook, ...cartList.slice(index + 1)]
 }
 
-export const UpdateBook = (getBook, bookInCart, quantity) => {
+interface UpdateBookInfo {
+  id: number
+  price: number
+  count: number
+  bookName: string
+  author: string
+  image: string
+}
+
+export const UpdateBook = (
+  getBook: UpdateBookInfo,
+  bookInCart: {
+    id: number
+    price: number
+    count: number
+    bookName: string
+    author: string
+    image: string
+    totalPrice: number
+  },
+  quantity: number
+) => {
   if (bookInCart) {
     return {
       ...bookInCart,
@@ -76,8 +96,8 @@ export const UpdateBook = (getBook, bookInCart, quantity) => {
   }
 }
 
-const App = () => {
-  const [cartList, setCartList] = useState([])
+const App = (): JSX.Element => {
+  const [cartList, setCartList] = useState<Array<CartListInfoApp> | []>([])
 
   useEffect(() => {
     const data = localStorage.getItem('book')
@@ -94,18 +114,19 @@ const App = () => {
     return window.alert('The book was added to the cart')
   }
 
-  const AddBookInCart = (id) => {
+  const AddBookInCart = (id: number) => {
     const getBook = product.find((book) => book.id === id)
     const getBookIndex = cartList.findIndex((book) => book.id === id)
     const bookInCart = cartList[getBookIndex]
 
     const newBook = UpdateBook(getBook, bookInCart, 1)
+
     const newArray = UpdateCartList(cartList, newBook, getBookIndex)
     setCartList(newArray)
     BookInCart()
   }
 
-  const DeletePurchasedBook = (id) => {
+  const DeletePurchasedBook = (id: number) => {
     const getBook = product.map((bookName) => bookName.id === id)
     const getBookIndex = cartList.findIndex((book) => book.id === id)
     const bookInCart = cartList[getBookIndex]
@@ -255,11 +276,11 @@ const App = () => {
             and discounts
           </div>
           <div>
-            <input type="text" placeholder="Enter your email" size="40" required></input>
+            <input type="text" placeholder="Enter your email" size={40} required></input>
             <button onClick={Subscription}>SUBSCRIBE</button>
           </div>
         </div>
-        <Chat showChat={showChat} className="chat" setShowChat={setShowChat} />
+        <Chat showChat={showChat} setShowChat={setShowChat} />
       </div>
     )
   }
