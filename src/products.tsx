@@ -954,15 +954,4 @@ const product: Product[] = [
   },
 
 ]
-//  var object = {
-//   someMethod: function() {}
-// };
-
-// object.someMethod.displayName = 'someMethod';
-
-
-// product.map(el => el.bookDesc()).displayName = 'someMethod';
-
-
-
 export default product

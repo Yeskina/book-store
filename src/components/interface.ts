@@ -60,12 +60,13 @@ export interface CartListInfoApp {
   bookName: string
   author: string
   image: string
+  totalPrice?: number
 }
 
 export interface CartContainerInfo {
   price?: number
   bookId?: number
-  AddBookInCart: (bookId: number) => void
+  AddBookInCart: (bookId: number | undefined) => void
 }
 
 export interface ChatProps {

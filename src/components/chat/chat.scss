@@ -2,6 +2,15 @@
   border-radius: 35px;
   height: 40px;
   width: 100px;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}
+
+.chat-container {
+  position: absolute;
+  right: 80px;
+  bottom: -810px;
 }
 
 form {
@@ -15,6 +24,9 @@ form {
   border: 2px solid #827979;
   padding: 15px;
   background-color: #dad7d7;
+  position: absolute;
+  right: 80px;
+  bottom: -810px;
 
   div {
     display: flex;
