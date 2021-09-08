@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/book-store/static/css/main.151b7fbd.chunk.css",
-    "main.js": "/book-store/static/js/main.1ec1da0c.chunk.js",
-    "main.js.map": "/book-store/static/js/main.1ec1da0c.chunk.js.map",
+    "main.js": "/book-store/static/js/main.a9ba41ff.chunk.js",
+    "main.js.map": "/book-store/static/js/main.a9ba41ff.chunk.js.map",
     "runtime-main.js": "/book-store/static/js/runtime-main.03576225.js",
     "runtime-main.js.map": "/book-store/static/js/runtime-main.03576225.js.map",
-    "static/js/2.ecd56414.chunk.js": "/book-store/static/js/2.ecd56414.chunk.js",
-    "static/js/2.ecd56414.chunk.js.map": "/book-store/static/js/2.ecd56414.chunk.js.map",
+    "static/js/2.0d680116.chunk.js": "/book-store/static/js/2.0d680116.chunk.js",
+    "static/js/2.0d680116.chunk.js.map": "/book-store/static/js/2.0d680116.chunk.js.map",
     "index.html": "/book-store/index.html",
     "static/css/main.151b7fbd.chunk.css.map": "/book-store/static/css/main.151b7fbd.chunk.css.map",
-    "static/js/2.ecd56414.chunk.js.LICENSE.txt": "/book-store/static/js/2.ecd56414.chunk.js.LICENSE.txt",
+    "static/js/2.0d680116.chunk.js.LICENSE.txt": "/book-store/static/js/2.0d680116.chunk.js.LICENSE.txt",
     "static/media/51DZeZw7K0L.09aa7c7b.jpg": "/book-store/static/media/51DZeZw7K0L.09aa7c7b.jpg",
     "static/media/51pYIEzOAGL.597d76e1.jpg": "/book-store/static/media/51pYIEzOAGL.597d76e1.jpg",
     "static/media/61eqltFwZKL.5aabf94a.jpg": "/book-store/static/media/61eqltFwZKL.5aabf94a.jpg",
@@ -48,8 +48,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.03576225.js",
-    "static/js/2.ecd56414.chunk.js",
+    "static/js/2.0d680116.chunk.js",
     "static/css/main.151b7fbd.chunk.css",
-    "static/js/main.1ec1da0c.chunk.js"
+    "static/js/main.a9ba41ff.chunk.js"
   ]
 }
