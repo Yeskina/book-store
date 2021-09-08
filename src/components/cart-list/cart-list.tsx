@@ -3,6 +3,7 @@ import React from 'react'
 
 import '../cart-list-item/cart-list-item.scss'
 import { CartListInfo } from '../interface'
+import { Link } from 'react-router-dom'
 
 const CartList: React.FC<CartListInfo> = ({ cartList, DeletePurchasedBook }) => {
   console.warn(DeletePurchasedBook)
@@ -38,7 +39,11 @@ const CartList: React.FC<CartListInfo> = ({ cartList, DeletePurchasedBook }) => 
             </tbody>
           </table>
           <div className="buttons-container">
-            <button>CONTINUE SHOPPING</button>
+          <button>
+            <Link to="/">
+              CONTINUE SHOPPING
+            </Link>
+            </button>
             <button>
               <a href="https://yeskina.github.io/credit-card/" target="blank">
                 BUY

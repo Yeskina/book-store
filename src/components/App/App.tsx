@@ -2,7 +2,7 @@ import './App.scss'
 import React, { useState, useEffect } from 'react'
 import product from '../../products'
 
-import { HashRouter, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Book from '../book/book'
 
 import Quotes from '../quotes/quotes'
@@ -25,8 +25,20 @@ import book15 from '../images/images/origami2.jpg'
 import Chat from '../chat/chat'
 import mainQuote from '../images/big-images/quote.jpg'
 import CartList from '../cart-list/cart-list'
+import { CartListInfoApp, Product } from '../interface'
 
-export const UpdateCartList = (cartList, newBook, index) => {
+export const UpdateCartList = (
+  cartList: Array<{
+    id: number
+    price: number
+    count: number
+    bookName: string
+    author: string
+    image: string
+  }>,
+  newBook: CartListInfoApp,
+  index: number
+) => {
   if (newBook.count === 0) {
     return [...cartList.slice(0, index), ...cartList.slice(index + 1)]
   }
@@ -37,11 +49,19 @@ export const UpdateCartList = (cartList, newBook, index) => {
   return [...cartList.slice(0, index), newBook, ...cartList.slice(index + 1)]
 }
 
-export const UpdateBook = (getBook, bookInCart, quantity) => {
+// getBook: Product | boolean[] | undefined
+// bookInCart.totalPrice!
+// bookInCart: CartListInfoApp| undefined,
+
+export const UpdateBook = (
+  getBook: Product | any,
+  bookInCart: CartListInfoApp,
+  quantity: number
+) => {
   if (bookInCart) {
     return {
       ...bookInCart,
-      totalPrice: bookInCart.totalPrice + quantity * (getBook?.price || 1),
+      totalPrice: bookInCart.totalPrice ?? +quantity * (getBook?.price || 1),
       count: bookInCart.count + quantity,
     }
   }
@@ -56,8 +76,8 @@ export const UpdateBook = (getBook, bookInCart, quantity) => {
   }
 }
 
-const App = () => {
-  const [cartList, setCartList] = useState([])
+const App = (): JSX.Element => {
+  const [cartList, setCartList] = useState<Array<CartListInfoApp> | []>([])
 
   useEffect(() => {
     const data = localStorage.getItem('book')
@@ -74,7 +94,7 @@ const App = () => {
     return window.alert('The book was added to the cart')
   }
 
-  const AddBookInCart = (id) => {
+  const AddBookInCart = (id: number | undefined) => {
     const getBook = product.find((book) => book.id === id)
     const getBookIndex = cartList.findIndex((book) => book.id === id)
     const bookInCart = cartList[getBookIndex]
@@ -86,7 +106,7 @@ const App = () => {
     BookInCart()
   }
 
-  const DeletePurchasedBook = (id) => {
+  const DeletePurchasedBook = (id: number) => {
     const getBook = product.map((bookName) => bookName.id === id)
     const getBookIndex = cartList.findIndex((book) => book.id === id)
     const bookInCart = cartList[getBookIndex]
@@ -108,38 +128,38 @@ const App = () => {
         <h1 className="books-name">PICKS OF THE SEASON</h1>
         <div className="books-container">
           <div className="book-img-container">
-            <Link to="/book/1">
+            <a href="/book/1">
               <img className="season-books" src={book1} alt="The Silver Arrow"></img>
-            </Link>
+            </a>
             <b>The Silver Arrow</b>
             <div>by Lev Grossman</div>
           </div>
           <div className="book-img-container">
-            <Link to="/book/2">
+            <a href="/book/2">
               <img className="season-books" src={book2} alt="Sleep Donation"></img>
-            </Link>
+            </a>
             <b>Sleep Donation</b>
             <div>by Karen Russell</div>
           </div>
           <div className="book-img-container">
-            <Link to="/book/3">
+            <a href="/book/3">
               <img className="season-book3" src={book3} alt="Greenlights"></img>
-            </Link>
+            </a>
             <b>Greenlights</b>
             <div>by Matthew</div>
             <div>McConaughey</div>
           </div>
           <div className="book-img-container">
-            <Link to="/book/4">
+            <a href="/book/4">
               <img className="season-books" src={book4} alt="Stephen Hawking"></img>
-            </Link>
+            </a>
             <b>Stephen Hawking</b>
             <div style={{ textAlign: 'center' }}>by Leonard Mlodinow</div>
           </div>
           <div className="book-img-container">
-            <Link to="/book/5">
+            <a href="/book/5">
               <img className="season-books" src={book5} alt="Magic Lessons"></img>
-            </Link>
+            </a>
             <b>Magic Lessons</b>
             <div>by Alice Hoffman</div>
           </div>
@@ -147,37 +167,37 @@ const App = () => {
         <h1 className="books-name">FEATURED BESTSELLERS</h1>
         <div className="books-container">
           <div className="book-img-container">
-            <Link to="/book/6">
+            <a href="/book/6">
               <img className="season-books" src={book6} alt="How I Built This"></img>
-            </Link>
+            </a>
             <b>How I Built This</b>
             <div>by Guy Raz</div>
           </div>
           <div className="book-img-container">
-            <Link to="/book/7">
+            <a href="/book/7">
               <img className="season-books" src={book7} alt="Dessert Person"></img>
-            </Link>
+            </a>
             <b>Dessert Person</b>
             <div>by Claire Saffitz</div>
           </div>
           <div className="book-img-container">
-            <Link to="/book/8">
+            <a href="/book/8">
               <img className="season-books" src={book8} alt="Lakota America"></img>
-            </Link>
+            </a>
             <b>Lakota America</b>
             <div style={{ textAlign: 'center' }}>by Pekka Hamalainen</div>
           </div>
           <div className="book-img-container">
-            <Link to="/book/9">
+            <a href="/book/9">
               <img className="season-books" src={book9} alt="Circe"></img>
-            </Link>
+            </a>
             <b>Circe</b>
             <div>by Madeline Miller</div>
           </div>
           <div className="book-img-container">
-            <Link to="/book/10">
+            <a href="/book/10">
               <img className="season-book5" src={book10} alt="We Are Water"></img>
-            </Link>
+            </a>
             <b>We Are Water</b>
             <b>Protectors</b>
             <div>by Carole Lindstrom</div>
@@ -187,41 +207,41 @@ const App = () => {
         <h1 className="books-name">GREAT BOOKS UNDER $15 AND $25</h1>
         <div className="books-container">
           <div className="book-img-container">
-            <Link to="/book/11">
+            <a href="/book/11">
               <img className="season-books" src={book11} alt="One Long River of"></img>
-            </Link>
+            </a>
             <b>One Long River of</b>
             <b>Song</b>
             <div>by Brian Doyle</div>
           </div>
           <div className="book-img-container">
-            <Link to="/book/12">
+            <a href="/book/12">
               <img className="season-book3" src={book12} alt="The Ultimate"></img>
-            </Link>
+            </a>
             <b>The Ultimate</b>
             <b>Micro-RPG Book</b>
             <div>by James D`Amato</div>
           </div>
           <div className="book-img-container">
-            <Link to="/book/13">
+            <a href="/book/13">
               <img className="season-books" src={book13} alt="Year of the"></img>
-            </Link>
+            </a>
             <b>Year of the</b>
             <b>Monkey</b>
             <div>by Patti Smith</div>
           </div>
           <div className="book-img-container">
-            <Link to="/book/14">
+            <a href="/book/14">
               <img className="season-books" src={book14} alt="Erosion"></img>
-            </Link>
+            </a>
             <b>Erosion</b>
             <div>by Terry Tempest</div>
             <div>William</div>
           </div>
           <div className="book-img-container">
-            <Link to="/book/15">
+            <a href="/book/15">
               <img className="season-book5" src={book15} alt="Star Wars Origami"></img>
-            </Link>
+            </a>
             <b>Star Wars Origami</b>
             <b>2</b>
             <div>by Chris Alexander</div>
@@ -246,7 +266,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <HashRouter>
+      <Router>
         <div>
           <nav className="header">
             <ul>
@@ -263,21 +283,21 @@ const App = () => {
           </nav>
 
           <Switch>
-            <Route exact path="/cart">
+            <Route path="/cart">
               <CartList cartList={cartList} DeletePurchasedBook={DeletePurchasedBook} />
             </Route>
-            <Route exact path="/quotes">
+            <Route path="/quotes">
               <Quotes />
             </Route>
-            <Route exact path="/book/:id">
+            <Route path="/book/:id">
               <Book AddBookInCart={AddBookInCart} />
             </Route>
-            <Route exact path="/">
+            <Route path="/">
               <Home />
             </Route>
           </Switch>
         </div>
-      </HashRouter>
+      </Router>
     </div>
   )
 }
