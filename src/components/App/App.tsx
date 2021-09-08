@@ -2,7 +2,7 @@ import './App.scss'
 import React, { useState, useEffect } from 'react'
 import product from '../../products'
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link, HashRouter } from 'react-router-dom'
 import Book from '../book/book'
 
 import Quotes from '../quotes/quotes'
@@ -128,38 +128,38 @@ const App = (): JSX.Element => {
         <h1 className="books-name">PICKS OF THE SEASON</h1>
         <div className="books-container">
           <div className="book-img-container">
-            <a href="/book/1">
+            <Link to="/book/1">
               <img className="season-books" src={book1} alt="The Silver Arrow"></img>
-            </a>
+            </Link>
             <b>The Silver Arrow</b>
             <div>by Lev Grossman</div>
           </div>
           <div className="book-img-container">
-            <a href="/book/2">
+            <Link to="/book/2">
               <img className="season-books" src={book2} alt="Sleep Donation"></img>
-            </a>
+            </Link>
             <b>Sleep Donation</b>
             <div>by Karen Russell</div>
           </div>
           <div className="book-img-container">
-            <a href="/book/3">
+            <Link to="/book/3">
               <img className="season-book3" src={book3} alt="Greenlights"></img>
-            </a>
+            </Link>
             <b>Greenlights</b>
             <div>by Matthew</div>
             <div>McConaughey</div>
           </div>
           <div className="book-img-container">
-            <a href="/book/4">
+            <Link to="/book/4">
               <img className="season-books" src={book4} alt="Stephen Hawking"></img>
-            </a>
+            </Link>
             <b>Stephen Hawking</b>
             <div style={{ textAlign: 'center' }}>by Leonard Mlodinow</div>
           </div>
           <div className="book-img-container">
-            <a href="/book/5">
+            <Link to="/book/5">
               <img className="season-books" src={book5} alt="Magic Lessons"></img>
-            </a>
+            </Link>
             <b>Magic Lessons</b>
             <div>by Alice Hoffman</div>
           </div>
@@ -167,37 +167,37 @@ const App = (): JSX.Element => {
         <h1 className="books-name">FEATURED BESTSELLERS</h1>
         <div className="books-container">
           <div className="book-img-container">
-            <a href="/book/6">
+            <Link to="/book/6">
               <img className="season-books" src={book6} alt="How I Built This"></img>
-            </a>
+            </Link>
             <b>How I Built This</b>
             <div>by Guy Raz</div>
           </div>
           <div className="book-img-container">
-            <a href="/book/7">
+            <Link to="/book/7">
               <img className="season-books" src={book7} alt="Dessert Person"></img>
-            </a>
+            </Link>
             <b>Dessert Person</b>
             <div>by Claire Saffitz</div>
           </div>
           <div className="book-img-container">
-            <a href="/book/8">
+            <Link to="/book/8">
               <img className="season-books" src={book8} alt="Lakota America"></img>
-            </a>
+            </Link>
             <b>Lakota America</b>
             <div style={{ textAlign: 'center' }}>by Pekka Hamalainen</div>
           </div>
           <div className="book-img-container">
-            <a href="/book/9">
+            <Link to="/book/9">
               <img className="season-books" src={book9} alt="Circe"></img>
-            </a>
+            </Link>
             <b>Circe</b>
             <div>by Madeline Miller</div>
           </div>
           <div className="book-img-container">
-            <a href="/book/10">
+            <Link to="/book/10">
               <img className="season-book5" src={book10} alt="We Are Water"></img>
-            </a>
+            </Link>
             <b>We Are Water</b>
             <b>Protectors</b>
             <div>by Carole Lindstrom</div>
@@ -207,41 +207,41 @@ const App = (): JSX.Element => {
         <h1 className="books-name">GREAT BOOKS UNDER $15 AND $25</h1>
         <div className="books-container">
           <div className="book-img-container">
-            <a href="/book/11">
+            <Link to="/book/11">
               <img className="season-books" src={book11} alt="One Long River of"></img>
-            </a>
+            </Link>
             <b>One Long River of</b>
             <b>Song</b>
             <div>by Brian Doyle</div>
           </div>
           <div className="book-img-container">
-            <a href="/book/12">
+            <Link to="/book/12">
               <img className="season-book3" src={book12} alt="The Ultimate"></img>
-            </a>
+            </Link>
             <b>The Ultimate</b>
             <b>Micro-RPG Book</b>
             <div>by James D`Amato</div>
           </div>
           <div className="book-img-container">
-            <a href="/book/13">
+            <Link to="/book/13">
               <img className="season-books" src={book13} alt="Year of the"></img>
-            </a>
+            </Link>
             <b>Year of the</b>
             <b>Monkey</b>
             <div>by Patti Smith</div>
           </div>
           <div className="book-img-container">
-            <a href="/book/14">
+            <Link to="/book/14">
               <img className="season-books" src={book14} alt="Erosion"></img>
-            </a>
+            </Link>
             <b>Erosion</b>
             <div>by Terry Tempest</div>
             <div>William</div>
           </div>
           <div className="book-img-container">
-            <a href="/book/15">
+            <Link to="/book/15">
               <img className="season-book5" src={book15} alt="Star Wars Origami"></img>
-            </a>
+            </Link>
             <b>Star Wars Origami</b>
             <b>2</b>
             <div>by Chris Alexander</div>
@@ -266,7 +266,7 @@ const App = (): JSX.Element => {
 
   return (
     <div className="App">
-      <Router>
+      <HashRouter>
         <div>
           <nav className="header">
             <ul>
@@ -281,23 +281,22 @@ const App = (): JSX.Element => {
               </li>
             </ul>
           </nav>
-
           <Switch>
-            <Route path="/cart">
+            <Route exact path="/cart">
               <CartList cartList={cartList} DeletePurchasedBook={DeletePurchasedBook} />
             </Route>
-            <Route path="/quotes">
+            <Route exact path="/quotes">
               <Quotes />
             </Route>
-            <Route path="/book/:id">
+            <Route exact path="/book/:id">
               <Book AddBookInCart={AddBookInCart} />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <Home />
             </Route>
           </Switch>
         </div>
-      </Router>
+      </HashRouter>
     </div>
   )
 }
